@@ -1,19 +1,19 @@
-let cardArea = document.querySelector(".API");
+let cardArea = document.querySelector("main");
 
 let apiURL = "https://restaurant.stepprojects.ge/api/Categories/GetAll";
 
 fetch(apiURL)
-    .then((response) => response.json)
-    .then((response) => intoHtml(response));
+  .then((response) => response.json)
+  .then((response) => intoHtml(response));
 
 
 function intoHtml(response) {
-    console.log(response);
+  console.log(response);
 
 
-    response.forEach((info) => {
+  response.forEach((info) => {
 
-        cardArea.innerHTML += `
+    cardArea.innerHTML += `
     <div class="card" style="width: 18rem;">
       <img src="..." class="card-img-top" alt="...">
       <div class="card-body">
@@ -23,5 +23,5 @@ function intoHtml(response) {
       </div>
     </div>
     `;
-    });
+  });
 }
